@@ -4,10 +4,7 @@ class ParticipantesController < ApplicationController
   # GET /participantes
   # GET /participantes.json
   def index
-    @participantes = Participante.all
-    if params[:search]
-      @participantes = Participante.search(params[:search])
-    end
+    @participantes = Participante.all.page params[:page]
   end
 
   # GET /participantes/1

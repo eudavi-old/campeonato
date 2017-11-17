@@ -1,10 +1,10 @@
 <div class="container">
-  <h1 style="color: dimgrey; text-align: center;">Equipes</h1>
+  <h1 style="text-align: center;">Grupos</h1>
   <table class="centered">
     <thead>
       <tr>
       <th>Icone</th>
-        <th>Equipe</th>
+        <th>Time</th>
         <th>Status</th>
         <th colspan="3"></th>
       </tr>
@@ -15,18 +15,20 @@
       <tr>
         <td><%= image_tag(grupo.image, class: 'circle icon_grupo')%></td>
         <td><%= grupo.nome %></td>
-
+          
         <% if (grupo.status == true) %>
               <td><i class="material-icons">check</i></td>
         <% else %>
               <td><i class="material-icons">clear</i></td>
         <% end %>
-        <td><%= link_to 'Mostrar', grupo, class: 'btn right #424242 grey darken-3' %></td>
+        <td><%= link_to 'Mostrar', grupo %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
   <br>
+      <%= link_to 'Novo Grupo', new_grupo_path, class: 'btn #424242 grey darken-3' %>
+
       <br><br><br>
 </div>

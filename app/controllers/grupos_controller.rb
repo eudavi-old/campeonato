@@ -4,7 +4,7 @@ class GruposController < ApplicationController
   # GET /grupos
   # GET /grupos.json
   def index
-    @grupos = Grupo.all
+    @grupos = Grupo.all.order(:status)
 
     @grupos.each do |f|
         f.verificaParticipantes(f)

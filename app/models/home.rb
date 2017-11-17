@@ -1,9 +1,3 @@
 class Home < ApplicationRecord
-
-	def self.search(query)
-		if query.present?
-			where('matricula::integer LIKE :query')
-		end
-	end
-
+	paginates_per 10
 end
