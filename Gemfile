@@ -65,3 +65,6 @@ gem "paperclip", "~> 4.1.1"
 gem 'font-awesome-sass'
 
 gem 'kaminari'
+
+# PostgresSQL
+gem 'pg', '~> 0.18.4'
