@@ -63,3 +63,5 @@ gem "paperclip", "~> 4.1.1"
 
 # Font-Awesome
 gem 'font-awesome-sass'
+
+gem 'kaminari'

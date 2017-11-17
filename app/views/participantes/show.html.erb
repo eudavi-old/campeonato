@@ -1,17 +1,22 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @participante.nome %>
-</p>
-
-<p>
-  <strong>Matricula:</strong>
-  <%= @participante.matricula %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @participante.status %>
-</p>
-
+<div class="container">
+  <h2>Informações</h2>
+    <table class="stripped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Matricula</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @participante.nome %></td>
+        <td><%= @participante.matricula %></td>
+        <td><%= @participante.status %></td>
+      </tr>
+      </tbody>
+    </table>
+<br>
 <%= link_to 'Edit', edit_participante_path(@participante) %> |
 <%= link_to 'Back', participantes_path %>
+</div>

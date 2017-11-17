@@ -4,7 +4,7 @@ class ParticipantesController < ApplicationController
   # GET /participantes
   # GET /participantes.json
   def index
-    @participantes = Participante.all
+    @participantes = Participante.all.page params[:page]
   end
 
   # GET /participantes/1

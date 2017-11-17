@@ -5,8 +5,9 @@
     <tr>
       <th>Nome</th>
       <th>Matricula</th>
-      <th>Status</th>
-      <th>Time</th>
+      <th>Confirmado</th>
+      <th>Equipe</th>
+      <th>Icone</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,17 +18,24 @@
         <td><%= participante.nome %></td>
         <td><%= participante.matricula %></td>
         <% if (participante.status == true) %>
-              <td><i class="fa fa-check-circle fa-2x status-ok"> </i></td>
+              <td><i class="material-icons">check</i></td>
+        <% else %>
+              <td><i class="material-icons">clear</i></td>
         <% end %>
-        <td><%= participante.grupo.nome %> <td>
-        <td><%= link_to 'Show', participante %></td>
-        <td><%= link_to 'Edit', edit_participante_path(participante) %></td>
-        <td><%= link_to 'Destroy', participante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= participante.grupo.nome %> </td>
+        <td><%= image_tag(participante.grupo.image, class: 'circle icon_grupo') %></td>
+        <td><%= link_to 'Mostrar', participante %></td>
+        <td><%= link_to 'Editar', edit_participante_path(participante) %></td>
+        <td><%= link_to 'Excluir', participante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
+<br>
+<%= link_to 'Novo Participante', new_participante_path, class: 'btn #ffffff white' %>
+<%= link_to_next_page @participantes, 'Próxima página' %>
+<%= link_to_prev_page @participantes, 'Página anterior' %>
+
 </div>
 <br>
-
-<%= link_to 'New Participante', new_participante_path %>
