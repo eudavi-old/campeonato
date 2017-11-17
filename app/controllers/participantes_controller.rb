@@ -5,6 +5,9 @@ class ParticipantesController < ApplicationController
   # GET /participantes.json
   def index
     @participantes = Participante.all
+    if params[:search]
+      @participantes = Participante.search(params[:search])
+    end
   end
 
   # GET /participantes/1
@@ -63,7 +66,7 @@ class ParticipantesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_participante
+    def set_participante  
       @participante = Participante.find(params[:id])
     end
 
@@ -71,4 +74,4 @@ class ParticipantesController < ApplicationController
     def participante_params
       params.require(:participante).permit(:nome, :matricula, :status, :grupo_id)
     end
-end
+  end

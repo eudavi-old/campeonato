@@ -2,3 +2,31 @@
 	height: 50px;
 	width: 50px;
 }
+
+header .header-background {
+    height: 550px;
+}
+
+header .header-background {
+    background-position-x: 50% !important;
+    height: 90%;
+    opacity: .5;
+    position: absolute;
+    top: 1;
+    left: 1;
+    width: 95%;
+    z-index: 0;
+}
+
+.header-background-17-7 {
+    background: 50% 30%;
+    background-image: url('logo - unilol .jpg');
+}
+
+img.logo {
+    margin: 100px auto 20px;
+    position: relative;
+    width: 15%;
+    z-index: 1;
+}
+
