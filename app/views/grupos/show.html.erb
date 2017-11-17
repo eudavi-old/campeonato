@@ -1,0 +1,32 @@
+
+
+<div class="container">
+	<h1>Participantes do Grupo</h1>
+	<table class="stripped">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Matricula</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<% @grupo.participantes.each do |p| %>
+		<tbody>
+			<tr>
+				<td><%= p.nome %></td>
+				<td><%= p.matricula %></td>
+
+				<% if p.status == false %>
+				<td> Não Confirmado </td>
+				<% else %>
+				<td> Confirmado  </td>
+				<% end %>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+
+	<%= link_to 'Edit', edit_grupo_path(@grupo) %> |
+	<%= link_to 'Back', grupos_path %>
+
+</div>

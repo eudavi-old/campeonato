@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+
+<%= form_with(model: participante, local: true) do |form| %>
+  <% if participante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(participante.errors.count, "error") %> prohibited this participante from being saved:</h2>
+
+      <ul>
+      <% participante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :participante_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matricula %>
+    <%= form.number_field :matricula, id: :participante_matricula %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :status, id: :participante_status %>
+    <%= form.label :status %>
+  </div>
+
+  <div>
+    <br>
+    <label>Escolha o Time</label>
+       <%= form.collection_select :grupo_id, Grupo.order(:nome), :id, :nome, class: "browser-default"%>
+  </div>
+
+  <div>
+    <br>
+    <%= form.submit 'Confirmar', class: 'waves-effect waves-light btn #757575 grey darken-1' %>
+  </div>
+     
+<% end %>

@@ -1,0 +1,32 @@
+
+
+
+<div class="container">
+  <h1>Grupos</h1>
+  <table>
+    <thead>
+      <tr>
+      <th>Icone</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @grupos.each do |grupo| %>
+      <tr>
+        <td><%= image_tag(grupo.image, class: 'circle icon_grupo')%></td>
+        <td><%= grupo.nome %></td>
+        <td><%= grupo.status %></td>
+        <td><%= link_to 'Mostrar', grupo %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Novo Grupo', new_grupo_path %>
+</div>
+

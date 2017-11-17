@@ -1,0 +1,17 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @participante.nome %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @participante.matricula %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @participante.status %>
+</p>
+
+<%= link_to 'Edit', edit_participante_path(@participante) %> |
+<%= link_to 'Back', participantes_path %>
